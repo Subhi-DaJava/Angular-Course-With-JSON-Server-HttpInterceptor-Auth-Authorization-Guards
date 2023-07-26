@@ -3,6 +3,26 @@
     <div class="card-header text-center text-bg-primary fs-3">Uyghur Angular Course</div>
     <div class="card-body text-center">
       <h4>All Products</h4>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Product Id</th> <th>Product Name</th> <th>Product Pixel</th> <th>Product Price</th> <th>Product Checked</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.id}}</td>
+          <td>{{product.productName}}</td>
+          <td>{{product.pixel}}</td>
+          <td>{{product.price}}</td>
+
+          <td (click)="changeProductChecked(product)"> <button class="btn btn-outline-primary">
+            <i [class]="product.checked ? 'bi bi-check' : 'bi bi-circle'"></i>
+          </button>
+           </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
