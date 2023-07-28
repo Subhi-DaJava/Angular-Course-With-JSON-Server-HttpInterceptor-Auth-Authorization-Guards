@@ -11,8 +11,8 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  public getProducts(): Observable<Array<Product>> {
-    return this.http.get<Array<Product>>("http://localhost:9000/products");
+  public getProducts(_page : number = 1, _limit : number = 5): Observable<Array<Product>> {
+    return this.http.get<Array<Product>>(`http://localhost:9000/products?_page=${_page}&_limit=${_limit}`);
   }
 
   public updateProductChecked(product: Product): Observable<Product> {
@@ -25,5 +25,9 @@ export class ProductService {
 
   addProduct(product: Product): Observable<Product> {
     return this.http.post<Product>("http://localhost:9000/products", product);
+  }
+
+  public searchByKeyword(keyword: string): Observable<Array<Product>> {
+    return this.http.get<Array<Product>>(`http://localhost:9000/products?productName_like=${keyword}`);
   }
 }

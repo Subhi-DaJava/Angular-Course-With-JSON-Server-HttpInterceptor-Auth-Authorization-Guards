@@ -9,8 +9,9 @@ import {catchError, map, Observable, of} from "rxjs";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Array<Product> = [];
-  errorMessage!: string;
+  public products: Array<Product> = [];
+  public errorMessage!: string;
+  public keyword: string = '';
 
   constructor(private productService: ProductService) {
   }
@@ -57,5 +58,15 @@ export class ProductsComponent implements OnInit {
         this.errorMessage = err.message;
       }
     });
+  }
+
+  searchProductByKeyword() {
+    this.productService.searchByKeyword(this.keyword).subscribe({
+      next: productsByKeyword => {
+        this.products = productsByKeyword;
+      }, error:err => {
+        this.errorMessage = err.message;
+      }
+    })
   }
 }

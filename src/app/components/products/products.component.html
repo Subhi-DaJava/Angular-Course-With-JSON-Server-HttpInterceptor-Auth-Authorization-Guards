@@ -3,6 +3,12 @@
     <div class="card-header text-center text-bg-primary fs-3">Uyghur Angular Course</div>
     <div class="card-body text-center">
       <h4>All Products</h4>
+      <div class="card-body">
+
+        <input type="text" [(ngModel)]="keyword" class="p-1"> {{keyword}}
+        <button class="btn btn-outline-primary ms-2" (click)="searchProductByKeyword()">Search <i class="bi bi-search"></i></button>
+
+      </div>
       <div class="error text-center text-danger fs-3" *ngIf="errorMessage">{{errorMessage}}</div>
       <table class="table table-striped">
         <thead>

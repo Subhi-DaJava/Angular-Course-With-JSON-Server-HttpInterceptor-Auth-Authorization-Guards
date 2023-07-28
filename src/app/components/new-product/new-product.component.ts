@@ -20,7 +20,7 @@ export class NewProductComponent implements OnInit{
     this.productForm = this.formBuilder.group({
       productName : this.formBuilder.control('', [Validators.required]),
       pixel : this.formBuilder.control(''),
-      price : this.formBuilder.control(0),
+      price : this.formBuilder.control(0,[Validators.required]),
       checked : this.formBuilder.control(false),
     })
   }
