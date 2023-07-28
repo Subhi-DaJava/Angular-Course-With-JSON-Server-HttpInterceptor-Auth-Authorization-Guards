@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../services/product.service";
+import {Product} from "../../models/product";
 
 @Component({
   selector: 'app-products',
@@ -7,12 +8,12 @@ import {ProductService} from "../../services/product.service";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Array<any> = [];
+  products: Array<Product> = [];
 
   constructor(private productService: ProductService) {
   }
 
-  changeProductChecked(product: any) {
+  changeProductChecked(product: Product) {
     this.changeChecked(product);
   }
 
@@ -30,7 +31,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  private changeChecked(product: any) {
+  private changeChecked(product: Product) {
     this.productService.updateProductChecked(product).subscribe({
       next: productUpdated => {
         //product.checked = productUpdated;
