@@ -9,7 +9,7 @@ import {catchError, map, Observable, of} from "rxjs";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products$!: Observable<Array<Product>>;
+  products: Array<Product> = [];
   errorMessage!: string;
 
   constructor(private productService: ProductService) {
@@ -24,20 +24,14 @@ export class ProductsComponent implements OnInit {
   }
 
   private getAllProducts() {
-    this.products$ = this.productService.getProducts().pipe(
-      catchError(error => {
-        this.errorMessage = error.message;
-        console.log(`Connection error:  ${this.errorMessage}`)
-        return of([]);
-      })
-    );
-    // this.productService.getProducts().subscribe({
-    //   next: allProducts => {
-    //     this.products = allProducts;
-    //   }, error: err => {
-    //     console.log(err);
-    //   }
-    // });
+   this.productService.getProducts().subscribe({
+      next: allProducts => {
+        this.products = allProducts;
+      }, error: err => {
+        this.errorMessage = err.message;
+        console.log(err);
+      }
+    });
   }
 
   private changeChecked(product: Product) {
@@ -48,8 +42,8 @@ export class ProductsComponent implements OnInit {
         product.checked = !product.checked;
       },
       error: err => {
-        console.log(err);
-        this.errorMessage = err.error.message;
+        console.log(err.message);
+        this.errorMessage = err.message;
       }
     });
   }
@@ -58,11 +52,9 @@ export class ProductsComponent implements OnInit {
     if(confirm('Are you sure to delete this product ?'))
     this.productService.deleteProductById(id).subscribe({
       next: value =>  {
-        this.products$ = this.products$.pipe(
-          map(productsFiltered => productsFiltered.filter(product => product.id != id))
-        )
+        this.products = this.products.filter(product => product.id != id);
       }, error: err => {
-        this.errorMessage = err.error.message;
+        this.errorMessage = err.message;
       }
     });
   }

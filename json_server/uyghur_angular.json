@@ -43,46 +43,18 @@
       "checked": true
     },
     {
-      "id": 7,
-      "productName": "Lenovo ThinkPad",
-      "pixel": "1600 Px",
-      "price": 1000,
-      "checked": false
+      "productName": "Nokia Phone 12",
+      "pixel": "1200 Px²",
+      "price": "880",
+      "checked": true,
+      "id": 7
     },
     {
-      "id": 8,
-      "productName": "Microsoft Surface",
-      "pixel": "2160 Px",
-      "price": 1300,
-      "checked": true
-    },
-    {
-      "id": 9,
-      "productName": "Acer Gaming Laptop",
-      "pixel": "1440 Px",
-      "price": 1700,
-      "checked": false
-    },
-    {
-      "id": 10,
-      "productName": "LG Ultrawide Monitor",
-      "pixel": "2560 Px",
-      "price": 800,
-      "checked": true
-    },
-    {
-      "id": 11,
-      "productName": "Razer Gaming Mouse",
-      "pixel": "1800 Px",
-      "price": 60,
-      "checked": false
-    },
-    {
-      "id": 12,
-      "productName": "Corsair Mechanical Keyboard",
-      "pixel": "1000 Px",
-      "price": 150,
-      "checked": true
+      "productName": "SamSung",
+      "pixel": "1200 Px",
+      "price": "1200",
+      "checked": true,
+      "id": 10
     }
   ]
 }
