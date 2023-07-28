@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     imports: [
         BrowserModule,
         RouterOutlet,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
