@@ -5,7 +5,7 @@
       "productName": "Asus PC",
       "pixel": "1980 Px",
       "price": 800,
-      "checked": true
+      "checked": false
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "productName": "Logitech Mouse",
       "pixel": "800 Px",
       "price": 30,
-      "checked": true
+      "checked": false
     },
     {
       "id": 5,
@@ -174,6 +174,20 @@
       "pixel": "1980 Px",
       "price": "999.50",
       "checked": true
+    },
+    {
+      "productName": "Nikon Photo",
+      "pixel": "1200 Px",
+      "price": "350 ",
+      "checked": false,
+      "id": 26
+    },
+    {
+      "productName": "Nikon Photo",
+      "pixel": "1200 Px",
+      "price": "350 ",
+      "checked": true,
+      "id": 27
     }
   ]
 }

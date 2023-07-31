@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Product} from "../../models/product";
-import {catchError, map, Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-products',
@@ -12,6 +11,9 @@ export class ProductsComponent implements OnInit {
   public products: Array<Product> = [];
   public errorMessage!: string;
   public keyword: string = '';
+  public totalPages : number = 0;
+  public pageLimit: number = 5;
+  public currentPage: number = 1;
 
   constructor(private productService: ProductService) {
   }
@@ -25,12 +27,24 @@ export class ProductsComponent implements OnInit {
   }
 
   private getAllProducts() {
-   this.productService.getProducts().subscribe({
-      next: allProducts => {
-        this.products = allProducts;
+   this.productService.getProducts(this.currentPage, this.pageLimit).subscribe({
+      next: response => {
+        this.products = response.body as Product[];
+
+        let totalProducts : number = parseInt(response.headers.get('x-total-count')!);
+        //console.log("total products: " + totalProducts)
+
+        this.totalPages = Math.floor(totalProducts / this.pageLimit);
+      //  console.log("before modeler: "+ this.totalPages);
+
+        if (totalProducts % this.pageLimit != 0) {
+          this.totalPages++;
+        }
+        //console.log("after modeler: " + this.totalPages);
+
       }, error: err => {
         this.errorMessage = err.message;
-        console.log(err);
+       // console.log(err);
       }
     });
   }
@@ -68,5 +82,10 @@ export class ProductsComponent implements OnInit {
         this.errorMessage = err.message;
       }
     })
+  }
+
+  surfPage(page: number) {
+    this.currentPage = page;
+    this.getAllProducts();
   }
 }
