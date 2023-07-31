@@ -11,9 +11,9 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  public getProducts(_page : number = 1, _limit : number = 5) {
+  public searchProducts(keyword: string = "", _page : number = 1, _limit : number = 5) {
     // return response -> the Object of type Http
-    return this.http.get(`http://localhost:9000/products?_page=${_page}&_limit=${_limit}`,{observe:'response'});
+    return this.http.get(`http://localhost:9000/products?productName_like=${keyword}&_page=${_page}&_limit=${_limit}`,{observe:'response'});
   }
 
   public updateProductChecked(product: Product): Observable<Product> {
@@ -28,7 +28,4 @@ export class ProductService {
     return this.http.post<Product>("http://localhost:9000/products", product);
   }
 
-  public searchByKeyword(keyword: string): Observable<Array<Product>> {
-    return this.http.get<Array<Product>>(`http://localhost:9000/products?productName_like=${keyword}`);
-  }
 }

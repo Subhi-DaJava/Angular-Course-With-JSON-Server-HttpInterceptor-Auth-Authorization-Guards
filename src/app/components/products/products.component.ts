@@ -23,11 +23,11 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllProducts();
+    this.searchProducts();
   }
 
-  private getAllProducts() {
-   this.productService.getProducts(this.currentPage, this.pageLimit).subscribe({
+  public searchProducts() {
+   this.productService.searchProducts(this.keyword, this.currentPage, this.pageLimit).subscribe({
       next: response => {
         this.products = response.body as Product[];
 
@@ -74,18 +74,8 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  searchProductByKeyword() {
-    this.productService.searchByKeyword(this.keyword).subscribe({
-      next: productsByKeyword => {
-        this.products = productsByKeyword;
-      }, error:err => {
-        this.errorMessage = err.message;
-      }
-    })
-  }
-
   surfPage(page: number) {
     this.currentPage = page;
-    this.getAllProducts();
+    this.searchProducts();
   }
 }
