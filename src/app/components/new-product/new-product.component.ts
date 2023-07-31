@@ -12,7 +12,7 @@ import {logMessages} from "@angular-devkit/build-angular/src/builders/browser-es
 export class NewProductComponent implements OnInit{
 
   public productForm!: FormGroup;
-  private errorMessage!: string;
+  public errorMessage!: string;
   constructor(private formBuilder: FormBuilder, private productService: ProductService) {
   }
 
@@ -22,7 +22,7 @@ export class NewProductComponent implements OnInit{
       pixel : this.formBuilder.control(''),
       price : this.formBuilder.control(0,[Validators.required]),
       checked : this.formBuilder.control(false),
-    })
+    });
   }
 
   addNewProduct() {

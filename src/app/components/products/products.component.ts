@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Product} from "../../models/product";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,9 @@ export class ProductsComponent implements OnInit {
   public pageLimit: number = 5;
   public currentPage: number = 1;
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private router: Router) {
   }
 
   changeProductChecked(product: Product) {
@@ -77,5 +80,9 @@ export class ProductsComponent implements OnInit {
   surfPage(page: number) {
     this.currentPage = page;
     this.searchProducts();
+  }
+
+  updateProduct(productId: number) {
+    this.router.navigateByUrl(`/update-product/${productId}`).then();
   }
 }

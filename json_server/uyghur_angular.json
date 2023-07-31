@@ -2,17 +2,17 @@
   "products": [
     {
       "id": 1,
-      "productName": "Asus PC",
+      "productName": "Asus PC S2",
       "pixel": "1980 Px",
-      "price": 800,
-      "checked": false
+      "price": "1200",
+      "checked": true
     },
     {
       "id": 2,
       "productName": "HP Laptop",
       "pixel": "1366 Px",
       "price": 1200,
-      "checked": true
+      "checked": false
     },
     {
       "id": 3,

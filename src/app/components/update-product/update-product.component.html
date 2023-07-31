@@ -1,0 +1,42 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-header text-center text-bg-primary fs-3">Uyghur Angular Course</div>
+    <div class="card-body">
+      <h4 class="text-center">Update Product</h4>
+      <div class="errorMessage" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+      <div class="row">
+        <div class="col-md-6 offset-3" *ngIf="formGroup">
+          <div class="text-center">{{formGroup.value | json }}</div>
+          <form [formGroup]="formGroup" (ngSubmit)="updateProduct()">
+
+            <div class="mb-3">
+              <label class="form-label">Product Name</label>
+              <input class="form-control" formControlName="productName">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Product Screen Pixel</label>
+              <input class="form-control" formControlName="pixel">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Product Price</label>
+              <input class="form-control" formControlName="price">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label me-2">Product Checked</label>
+              <input type="checkbox" class="form-check-input" formControlName="checked">
+            </div>
+
+            <button [disabled]="formGroup.invalid" class="btn btn-success">Add New Product</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
