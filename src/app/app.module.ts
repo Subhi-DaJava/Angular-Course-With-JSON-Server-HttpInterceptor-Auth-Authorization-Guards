@@ -11,6 +11,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateProductComponent } from './components/update-product/update-product.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { StateErrorComponent } from './components/state-error/state-error.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ProductsComponent,
     NewProductComponent,
     UpdateProductComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    StateErrorComponent
   ],
   imports: [
     BrowserModule,

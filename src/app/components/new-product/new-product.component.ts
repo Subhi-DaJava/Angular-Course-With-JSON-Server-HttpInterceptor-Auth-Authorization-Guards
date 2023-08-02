@@ -26,6 +26,7 @@ export class NewProductComponent implements OnInit{
   }
 
   addNewProduct() {
+
     let newProduct : Product = this.productForm.value;
     this.productService.addProduct(newProduct).subscribe({
       next: productSaved => {

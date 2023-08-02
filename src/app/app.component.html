@@ -1,14 +1,6 @@
-<h2 class="text text-primary text-center mt-2">Uighur_Angular_Course</h2>
-
-<nav class="p-3">
-  <ul class="nav nav-fill">
-    <li *ngFor="let action of actions" >
-      <button  (click)="setCurrentAction(action)" routerLink="{{action.route}}"
-      [class]="currentAction != action ? action.style : action.actionStyle">{{action.title}} <i class="bi-{{action.icons}}"></i></button>
-    </li>
-  </ul>
-</nav>
+<app-navbar></app-navbar>
 <app-dashboard></app-dashboard>
+<app-state-error></app-state-error>
 <router-outlet>
 
 </router-outlet>

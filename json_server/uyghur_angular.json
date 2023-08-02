@@ -5,7 +5,7 @@
       "productName": "Asus PC S2",
       "pixel": "1980 Px",
       "price": "1200",
-      "checked": false
+      "checked": true
     },
     {
       "id": 2,
@@ -384,6 +384,13 @@
       "pixel": "600 Px",
       "price": 350,
       "checked": false
+    },
+    {
+      "id": 56,
+      "productName": "Asus Laptop",
+      "pixel": "1980 Px",
+      "price": 910,
+      "checked": true
     }
   ]
 }

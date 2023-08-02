@@ -26,7 +26,7 @@
           <td>{{product.id}}</td>
           <td>{{product.productName}}</td>
           <td>{{product.pixel}}</td>
-          <td>{{product.price}}</td>
+          <td>{{product.price}} <span>€</span></td>
 
           <td (click)="changeProductChecked(product)">
             <button class="btn btn-outline-primary">
@@ -48,7 +48,7 @@
 
           <button (click)="surfPage(i + 1)"
                   [ngClass]="this.appState.productState.currentPage == (i + 1) ? 'btn-primary m-1' : 'btn-outline-primary'"
-                  class="btn m-1">{{ i + 1}}
+                  class="btn m-1">{{ i + 1 }}
           </button>
           <!--          <button (click)="surfPage(i + 1)"-->
           <!--                  [class.btn-primary]="currentPage == (i + 1)"-->
