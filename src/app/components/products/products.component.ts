@@ -53,7 +53,8 @@ export class ProductsComponent implements OnInit {
           products: products,
           totalPages: totalPages,
           totalProducts: totalProducts,
-          status: Status.LOADED
+          status: Status.LOADED,
+          errorMessage: ""
         });
       }, error: err => {
         this.appState.setProductState({

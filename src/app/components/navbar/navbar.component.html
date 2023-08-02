@@ -3,13 +3,18 @@
 <nav class="p-3">
   <ul class="nav nav-fill">
     <li *ngFor="let action of actions">
-      <button  (click)="setCurrentAction(action)" routerLink="{{action.route}}"
+      <button  (click)="setCurrentAction(action)" routerLink="{{ action.route }}"
                [class]="currentAction != action ? action.style : action.actionStyle">{{action.title}} <i class="bi-{{action.icons}}"></i></button>
     </li>
-    <li *ngIf="appState.productState.status === 'LOADING'">
+<!--    <li *ngIf="appState.productState.status === 'LOADING'">-->
+    <li *ngIf="this.loadingService.isLoading$ | async">
+<!--    <li *ngIf="isLoading">-->
       <div class="spinner-border text-primary ms-2 justify-content-end" role="status">
         <span class="sr-only">Loading...</span>
       </div>
     </li>
   </ul>
 </nav>
+<div *ngIf="appState.productState.errorMessage" class="text text-center text-danger fs-2">
+  {{appState.productState.errorMessage | json}}
+</div>

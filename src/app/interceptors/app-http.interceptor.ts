@@ -6,19 +6,23 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import {finalize, Observable} from 'rxjs';
+import {LoadingService} from "../services/loading.service";
 import {AppStateService} from "../services/app-state.service";
-import {Status} from "../models/status";
 
 @Injectable()
 export class AppHttpInterceptor implements HttpInterceptor {
 
-  constructor(private appState: AppStateService) {}
+  constructor(
+      private loadingService: LoadingService,
+      private appState: AppStateService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    this.appState.setProductState({
-      status: Status.LOADING
-    });
+    // this.appState.setProductState({
+    //   status: Status.LOADING
+    // });
+
+    this.loadingService.showLoadingSpinner();
 
     const requestClone = request.clone({
       headers: request.headers.set('Authorization', 'Bearer JWT')
@@ -26,9 +30,12 @@ export class AppHttpInterceptor implements HttpInterceptor {
 
     return next.handle(requestClone).pipe(
       finalize(() => {
-        this.appState.setProductState({
-          status: Status.LOADED
-        })
+
+        // this.appState.setProductState({
+        //   status: Status.DEFAULT
+        // })
+
+        this.loadingService.hideLoadingSpinner();
       })
     );
   }
