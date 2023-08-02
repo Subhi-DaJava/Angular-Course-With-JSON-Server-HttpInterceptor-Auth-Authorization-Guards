@@ -391,6 +391,20 @@
       "pixel": "1980 Px",
       "price": 910,
       "checked": true
+    },
+    {
+      "productName": "Sony Laptop",
+      "pixel": "1200 Px",
+      "price": "1200",
+      "checked": true,
+      "id": 57
+    },
+    {
+      "productName": "Toshiba Tv",
+      "pixel": "3000 Px",
+      "price": "2560",
+      "checked": false,
+      "id": 58
     }
   ]
 }
