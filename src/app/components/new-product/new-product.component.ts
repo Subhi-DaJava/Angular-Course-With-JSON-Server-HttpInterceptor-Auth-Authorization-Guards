@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Product} from "../../models/product";
 import {ProductService} from "../../services/product.service";
 import {logMessages} from "@angular-devkit/build-angular/src/builders/browser-esbuild/esbuild";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-product',
@@ -13,7 +14,7 @@ export class NewProductComponent implements OnInit{
 
   public productForm!: FormGroup;
   public errorMessage!: string;
-  constructor(private formBuilder: FormBuilder, private productService: ProductService) {
+  constructor(private formBuilder: FormBuilder, private productService: ProductService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class NewProductComponent implements OnInit{
     let newProduct : Product = this.productForm.value;
     this.productService.addProduct(newProduct).subscribe({
       next: productSaved => {
+        this.router.navigateByUrl('/products').then();
         console.log(productSaved)
       },
       error:err => {

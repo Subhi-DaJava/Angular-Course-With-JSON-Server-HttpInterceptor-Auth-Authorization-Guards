@@ -27,7 +27,7 @@ export class ProductService {
   }
 
   addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>("${this.host}", product);
+    return this.http.post<Product>(`${this.host}`, product);
   }
 
   getProductById(productId: number): Observable<Product> {

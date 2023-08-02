@@ -391,6 +391,13 @@
       "pixel": "1980 Px",
       "price": 910,
       "checked": true
+    },
+    {
+      "productName": "Toshiba Laptop",
+      "pixel": "1230 Px",
+      "price": "1230",
+      "checked": true,
+      "id": 57
     }
   ]
 }
