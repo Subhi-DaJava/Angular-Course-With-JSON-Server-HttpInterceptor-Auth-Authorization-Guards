@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Product} from "../../models/product";
 import {Router} from "@angular/router";
+import {AppStateService} from "../../services/app-state.service";
 
 @Component({
   selector: 'app-products',
@@ -9,16 +10,11 @@ import {Router} from "@angular/router";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  public products: Array<Product> = [];
-  public errorMessage!: string;
-  public keyword: string = '';
-  public totalPages : number = 0;
-  public pageLimit: number = 5;
-  public currentPage: number = 1;
 
   constructor(
     private productService: ProductService,
-    private router: Router) {
+    private router: Router,
+    public appState: AppStateService) {
   }
 
   changeProductChecked(product: Product) {
@@ -30,24 +26,28 @@ export class ProductsComponent implements OnInit {
   }
 
   public searchProducts() {
-   this.productService.searchProducts(this.keyword, this.currentPage, this.pageLimit).subscribe({
+    this.productService.searchProducts(
+      this.appState.productState.keyword,
+      this.appState.productState.currentPage,
+      this.appState.productState.pageLimit).subscribe({
       next: response => {
-        this.products = response.body as Product[];
+        this.appState.productState.products = response.body as Product[];
 
-        let totalProducts : number = parseInt(response.headers.get('x-total-count')!);
+        let totalProducts: number = parseInt(response.headers.get('x-total-count')!);
+        this.appState.productState.totalProducts = totalProducts;
         //console.log("total products: " + totalProducts)
 
-        this.totalPages = Math.floor(totalProducts / this.pageLimit);
-      //  console.log("before modeler: "+ this.totalPages);
+        this.appState.productState.totalPages = Math.floor(totalProducts / this.appState.productState.pageLimit);
+        //  console.log("before modeler: "+ this.totalPages);
 
-        if (totalProducts % this.pageLimit != 0) {
-          this.totalPages++;
+        if (totalProducts % this.appState.productState.pageLimit != 0) {
+          ++this.appState.productState.totalPages;
         }
         //console.log("after modeler: " + this.totalPages);
 
       }, error: err => {
-        this.errorMessage = err.message;
-       // console.log(err);
+        this.appState.productState.errorMessage = err.message;
+        // console.log(err);
       }
     });
   }
@@ -61,24 +61,26 @@ export class ProductsComponent implements OnInit {
       },
       error: err => {
         console.log(err.message);
-        this.errorMessage = err.message;
+        this.appState.productState.errorMessage = err.message;
       }
     });
   }
 
   public deleteProduct(id: number) {
-    if(confirm('Are you sure to delete this product ?'))
-    this.productService.deleteProductById(id).subscribe({
-      next: value =>  {
-        this.products = this.products.filter(product => product.id != id);
-      }, error: err => {
-        this.errorMessage = err.message;
-      }
-    });
+    if (confirm('Are you sure to delete this product ?'))
+      this.productService.deleteProductById(id).subscribe({
+        next: value => {
+          // this.appState.productState.products = this.appState.productState.products.filter((product:any) => product.id != id);
+         this.appState.productState.currentPage = 1;
+          this.searchProducts();
+        }, error: err => {
+          this.appState.productState.errorMessage = err.message;
+        }
+      });
   }
 
   surfPage(page: number) {
-    this.currentPage = page;
+    this.appState.productState.currentPage = page;
     this.searchProducts();
   }
 

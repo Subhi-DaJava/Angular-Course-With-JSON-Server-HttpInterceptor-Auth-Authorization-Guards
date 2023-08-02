@@ -10,6 +10,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateProductComponent } from './components/update-product/update-product.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UpdateProductComponent } from './components/update-product/update-produ
     HomeComponent,
     ProductsComponent,
     NewProductComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

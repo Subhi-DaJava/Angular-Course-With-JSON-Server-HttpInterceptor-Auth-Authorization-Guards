@@ -5,7 +5,7 @@
       "productName": "Asus PC S2",
       "pixel": "1980 Px",
       "price": "1200",
-      "checked": true
+      "checked": false
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "productName": "Logitech Mouse",
       "pixel": "800 Px",
       "price": 30,
-      "checked": false
+      "checked": true
     },
     {
       "id": 5,
@@ -239,6 +239,13 @@
       "checked": true
     },
     {
+      "id": 35,
+      "productName": "Microsoft Surface",
+      "pixel": "2160 Px",
+      "price": 1300,
+      "checked": true
+    },
+    {
       "id": 36,
       "productName": "Microsoft Surface",
       "pixel": "2160 Px",
@@ -377,27 +384,6 @@
       "pixel": "600 Px",
       "price": 350,
       "checked": false
-    },
-    {
-      "id": 56,
-      "productName": "Asus R7535J",
-      "pixel": "1980 Px",
-      "price": "999.50",
-      "checked": true
-    },
-    {
-      "id": 57,
-      "productName": "Asus R7535J",
-      "pixel": "1980 Px",
-      "price": "999.50",
-      "checked": true
-    },
-    {
-      "id": 58,
-      "productName": "Asus R7535J",
-      "pixel": "1980 Px",
-      "price": "999.50",
-      "checked": true
     }
   ]
 }

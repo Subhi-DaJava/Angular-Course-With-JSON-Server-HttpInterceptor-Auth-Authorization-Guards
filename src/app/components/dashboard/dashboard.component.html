@@ -1,0 +1,24 @@
+<div class="p-3 col-md-6 offset-3">
+  <div class="card">
+    <div class="card-body">
+      <ul class="nav nav-pills justify-content-center">
+        <li>
+          <label class="border border-info p-1 bg-info text-white ms-1">Products: {{ appState.productState.totalProducts }}</label>
+        </li>
+        <li>
+          <label  class="border border-info p-1 bg-success text-white ms-1">Pages: {{ appState.productState.totalPages }}</label>
+        </li>
+        <li>
+          <label  class="border border-info p-1 bg-danger text-white ms-1">Sizes: {{ appState.productState.pageLimit }}</label>
+        </li>
+        <li>
+          <label  class="border border-info p-1 bg-black text-white ms-1">Current Page: {{ appState.productState.currentPage }}</label>
+        </li>
+        <li>
+          <label  class="border border-info p-1 bg-primary text-white ms-1">Checked: {{ totalCheckedOnPage() }}</label>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
