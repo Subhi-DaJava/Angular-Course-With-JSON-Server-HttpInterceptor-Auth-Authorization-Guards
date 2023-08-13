@@ -108,6 +108,6 @@ export class ProductsComponent implements OnInit {
   }
 
   updateProduct(productId: number) {
-    this.router.navigateByUrl(`/update-product/${productId}`).then();
+    this.router.navigateByUrl(`/auth/update-product/${productId}`).then();
   }
 }

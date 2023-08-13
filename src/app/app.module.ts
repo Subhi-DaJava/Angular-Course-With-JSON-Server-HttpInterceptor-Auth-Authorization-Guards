@@ -14,6 +14,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StateErrorComponent } from './components/state-error/state-error.component';
 import {AppHttpInterceptor} from "./interceptors/app-http.interceptor";
+import { LoginComponent } from './components/login/login.component';
+import { AuthTemplateComponent } from './components/auth-template/auth-template.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {AppHttpInterceptor} from "./interceptors/app-http.interceptor";
     UpdateProductComponent,
     DashboardComponent,
     NavbarComponent,
-    StateErrorComponent
+    StateErrorComponent,
+    LoginComponent,
+    AuthTemplateComponent
   ],
   imports: [
     BrowserModule,

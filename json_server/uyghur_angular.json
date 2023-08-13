@@ -405,6 +405,41 @@
       "price": "2560",
       "checked": false,
       "id": 58
+    },
+    {
+      "productName": "Ipod",
+      "pixel": "----",
+      "price": "25",
+      "checked": true,
+      "id": 59
+    },
+    {
+      "productName": "IPad",
+      "pixel": "1500 Px",
+      "price": "889",
+      "checked": true,
+      "id": 60
+    },
+    {
+      "productName": "DELL Monitor ",
+      "pixel": "2999 Px",
+      "price": "456",
+      "checked": false,
+      "id": 61
+    },
+    {
+      "productName": "Sony Laptop",
+      "pixel": "2000 Px",
+      "price": "1235",
+      "checked": false,
+      "id": 62
+    },
+    {
+      "productName": "IWatch",
+      "pixel": "200 Px",
+      "price": "699",
+      "checked": true,
+      "id": 63
     }
   ]
 }
