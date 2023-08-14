@@ -18,7 +18,7 @@
           <th>Product Name</th>
           <th>Product Pixel</th>
           <th>Product Price</th>
-          <th>Product Checked</th>
+          <th *ngIf="appState.authStatus.roles.includes('ADMIN')">Product Checked</th>
         </tr>
         </thead>
         <tbody>
@@ -29,16 +29,16 @@
           <td>{{product.price}} <span>€</span></td>
 
           <td (click)="changeProductChecked(product)">
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-primary" *ngIf="appState.authStatus.roles.includes('ADMIN')">
               <i [class]="product.checked ? 'bi bi-check' : 'bi bi-circle'"></i>
               <!--              <i [class.bi-check]="product.checked" [class.bi-circle]="!product.checked"></i>-->
             </button>
           </td>
           <td>
-            <button (click)="updateProduct(product.id)" class="bi bi-pencil-square btn btn-success"></button>
+            <button (click)="updateProduct(product.id)" class="bi bi-pencil-square btn btn-success" *ngIf="appState.authStatus.roles.includes('ADMIN')"></button>
           </td>
           <td>
-            <button (click)="deleteProduct(product.id)" class="bi bi-trash btn btn-danger"></button>
+            <button (click)="deleteProduct(product.id)" class="bi bi-trash btn btn-danger" *ngIf="appState.authStatus.roles.includes('ADMIN')"></button>
           </td>
         </tr>
         </tbody>

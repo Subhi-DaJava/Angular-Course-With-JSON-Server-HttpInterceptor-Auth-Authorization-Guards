@@ -20,12 +20,20 @@
       "id": "Admin",
       "password": "12345",
       "roles": [
-        "USER", "ADMIN"
+        "USER",
+        "ADMIN"
       ],
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsInVzZXJuYW1lIjoiQWRtaW4iLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTUxNjIzOTAyMiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAwL2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiIsIkFETUlOIl19.cxHQfofGhTuXxfGfJoIzD7xfvTeeOvZEpIw-1Y18AUc"
+    },
+    {
+      "id": "Manager",
+      "password": "12345",
+      "roles": [
+        "MANAGER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNYW5hZ2VyIiwidXNlcm5hbWUiOiJNYW5hZ2VyIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMC9hdXRoIiwibmJmIjoxNTE2MjM5MDIyLCJlbWFpbCI6Im1hbmFnZXJAZ21haWwuY29tIiwicm9sZXMiOlsiQURNSU4iLCJNQU5BR0VSIl19.uqQ3qZEkfgBMvNkVBT_JsjOlAMlgles8lR0iKpMQLG4"
     }
   ],
-
   "products": [
     {
       "id": 1,
@@ -451,7 +459,7 @@
       "productName": "DELL Monitor ",
       "pixel": "2999 Px",
       "price": "456",
-      "checked": false,
+      "checked": true,
       "id": 61
     },
     {

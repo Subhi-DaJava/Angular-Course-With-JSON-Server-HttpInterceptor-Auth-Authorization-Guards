@@ -16,6 +16,7 @@ import { StateErrorComponent } from './components/state-error/state-error.compon
 import {AppHttpInterceptor} from "./interceptors/app-http.interceptor";
 import { LoginComponent } from './components/login/login.component';
 import { AuthTemplateComponent } from './components/auth-template/auth-template.component';
+import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthTemplateComponent } from './components/auth-template/auth-template.
     NavbarComponent,
     StateErrorComponent,
     LoginComponent,
-    AuthTemplateComponent
+    AuthTemplateComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,
