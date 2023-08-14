@@ -17,10 +17,23 @@ export class AppStateService {
     status: Status.DEFAULT
   }
 
+  public authStatus: any = {
+    isAuthenticated: false,
+    username: undefined,
+    roles: undefined,
+    email: undefined,
+    token: undefined
+  }
+
+  public setAuthStatus(status: any) {
+    this.authStatus = {...this.authStatus, ...status};
+  }
+
   constructor() {
   }
 
   public setProductState(status: any): void {
     this.productState = {...this.productState, ...status};
   }
+
 }
