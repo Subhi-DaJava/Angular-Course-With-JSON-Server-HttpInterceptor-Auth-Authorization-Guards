@@ -14,7 +14,7 @@
       "roles": [
         "USER"
       ],
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVc2VyMiIsInVzZXJuYW1lIjoiVXNlcjIiLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTUxNjIzOTAyMiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAwL2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdfQ.iyYbktn_Ste9u_Lj9woarmz3bkJ4reSRrBMvCxSNU3Q"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVc2VyMiIsInVzZXJuYW1lIjoiVXNlcjIiLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTUxNjIzOTAyMiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAwL2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImVtYWlsIjoidXNlcjJAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdfQ._j0QQxqtE-7KPx59fOqtyYPzg4jxsIBCaueZ7U4rbww"
     },
     {
       "id": "Admin",
@@ -22,7 +22,7 @@
       "roles": [
         "USER", "ADMIN"
       ],
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsInVzZXJuYW1lIjoiQWRtaW4iLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTUxNjIzOTAyMiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAwL2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiIsIkFETUlOIl19.VU1b3Zaz15OeL4s8i4g6YtngdyQR98aPfNWjVxaBtIU"
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBZG1pbiIsInVzZXJuYW1lIjoiQWRtaW4iLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTUxNjIzOTAyMiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAwL2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiIsIkFETUlOIl19.cxHQfofGhTuXxfGfJoIzD7xfvTeeOvZEpIw-1Y18AUc"
     }
   ],
 
