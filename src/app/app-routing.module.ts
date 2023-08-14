@@ -9,6 +9,7 @@ import {AuthTemplateComponent} from "./components/auth-template/auth-template.co
 import {AuthenticationGuard} from "./guards/authentication.guard";
 import {AuthorizationGuard} from "./guards/authorization.guard";
 import {NotAuthorizedComponent} from "./components/not-authorized/not-authorized.component";
+import {NotFoundComponent} from "./components/not-found/not-found.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,13 +17,14 @@ const routes: Routes = [
     path: 'auth', component: AuthTemplateComponent, canActivate: [AuthenticationGuard],
     children: [
       { path: 'products', component: ProductsComponent},
-      { path: 'newProduct', component: NewProductComponent, canActivate: [AuthorizationGuard] },
-      { path: 'update-product/:id', component: UpdateProductComponent, canActivate: [AuthorizationGuard] },
+      { path: 'newProduct', component: NewProductComponent, canActivate: [AuthorizationGuard], data: { roles: 'ADMIN' } },
+      { path: 'update-product/:id', component: UpdateProductComponent, canActivate: [AuthorizationGuard], data: { roles: 'ADMIN' } },
       { path: 'notAuthorized', component: NotAuthorizedComponent }
     ]
   },
 
   { path: 'home', component: HomeComponent },
+  { path: 'notFound', component: NotFoundComponent },
   { path: "", redirectTo: "login", pathMatch: 'full' }
 ];
 

@@ -40,14 +40,14 @@
       "productName": "Asus PC S2",
       "pixel": "1980 Px",
       "price": "1200",
-      "checked": true
+      "checked": false
     },
     {
       "id": 2,
       "productName": "HP Laptop",
       "pixel": "1366 Px",
       "price": 1200,
-      "checked": false
+      "checked": true
     },
     {
       "id": 3,
@@ -442,13 +442,6 @@
       "id": 58
     },
     {
-      "productName": "Ipod",
-      "pixel": "----",
-      "price": "25",
-      "checked": true,
-      "id": 59
-    },
-    {
       "productName": "IPad",
       "pixel": "1500 Px",
       "price": "889",
@@ -468,13 +461,6 @@
       "price": "1235",
       "checked": false,
       "id": 62
-    },
-    {
-      "productName": "IWatch",
-      "pixel": "200 Px",
-      "price": "699",
-      "checked": true,
-      "id": 63
     }
   ]
 }

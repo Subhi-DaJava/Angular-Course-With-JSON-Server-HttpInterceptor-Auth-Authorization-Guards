@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AppStateService} from "../../services/app-state.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+    constructor(public appStatus: AppStateService, private router: Router) {
+    }
 
+    logOut() {
+        this.appStatus.authStatus = {};
+        this.router.navigateByUrl("/login").then();
+    }
 }

@@ -27,6 +27,7 @@ export class AppStateService {
 
   public setAuthStatus(status: any) {
     this.authStatus = {...this.authStatus, ...status};
+    console.log(this.authStatus.roles);
   }
 
   constructor() {
